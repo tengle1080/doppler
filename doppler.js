@@ -105,6 +105,9 @@ window.doppler = (function() {
     // There seems to be some initial "warm-up" period
     // where all frequencies are significantly louder.
     // A quick timeout will hopefully decrease that bias effect.
+    // Give the audio context a moment to stabilize before scanning.
+    // Without an explicit delay the timeout defaults to 0ms which
+    // negates the intended warm-up period.
     setTimeout(function() {
       // Optimize doppler tone
       freq = optimizeFrequency(osc, analyser, 19000, 22000);
@@ -112,7 +115,7 @@ window.doppler = (function() {
 
       clearInterval(readMicInterval);
       callback(analyser, userCallback);
-    });
+    }, 500);
   };
 
   return {
