@@ -38,3 +38,14 @@ Unfortunately this doesn't work on Firefox since it doesn't seem to support the 
 * The awesome [Jasper Lu](https://github.com/jasper-lu) implemented a version of this [to android](https://github.com/jasper-lu/doppler-android). [Go check it out](https://github.com/jasper-lu/doppler-android)!
 * The wonderful [Harrison Green](https://github.com/hgarrereyn) wrote a [chrome extension](https://chrome.google.com/webstore/detail/audioscroll-extension/nknlpaccngmmdfjcbjkccfmoimehdeli?hl=en-US&gl=US) with this!
 * [Stan James](https://github.com/wanderingstan/handybird) created a wonderful flappy birds implementation with it.
+
+## Live weather radar for Cincinnati, Ohio
+
+Looking for a quick way to view current precipitation around Cincinnati? Open
+[cincinnati-radar.html](cincinnati-radar.html) in your browser while running a
+simple static file server (for example, `python -m http.server`). The page uses
+[Leaflet](https://leafletjs.com/) together with the public
+[RainViewer](https://www.rainviewer.com/api.html) radar tiles to display the
+latest live radar frame for the greater Cincinnati area. The view refreshes
+automatically every five minutes and highlights the time of the most recent
+frame at the top of the page.
